@@ -7,6 +7,7 @@ conn = psycopg2.connect(
    user="postgres",
    password="Vera1234?"
 )
+#xyz
 # tänk på att dubbelkolla om sql table verkligen finns i databasen
 def read_dict(C):
     cur = C.cursor()
