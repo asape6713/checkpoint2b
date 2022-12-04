@@ -7,7 +7,7 @@ conn = psycopg2.connect(
    user="postgres",
    password="Vera1234?"
 )
-
+# tänk på att dubbelkolla om sql table verkligen finns i databasen
 def read_dict(C):
     cur = C.cursor()
     cur.execute("SELECT id, word, translation FROM dictionary;")
