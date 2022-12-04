@@ -7,6 +7,7 @@ conn = psycopg2.connect(
    user="postgres",
    password="Vera1234?"
 )
+# nisse hult is bACK
 #llll
 #xyz
 # tänk på att dubbelkolla om sql table verkligen finns i databasen
