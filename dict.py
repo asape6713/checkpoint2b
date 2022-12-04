@@ -14,7 +14,7 @@ def read_dict(C):
     rows = cur.fetchall()
     cur.close()
     return rows
-def add_word(C, word, translation):
+def insert_word(C, word, translation):
     cur = C.cursor()
     cur.execute(f"INSERT INTO dictionary (word, translation) VALUES ('{word}', '{translation}');")
     cur.close()
@@ -34,7 +34,7 @@ while True: ## REPL - Read Execute Program Loop
     elif cmd == "add":
         name = input("  Word: ")
         phone = input("  Translation: ")
-        add_word(conn, name, phone)
+        insert_word(conn, name, phone)
     elif cmd == "delete":
         ID = input("  ID: ")
         delete_word(conn, ID)
