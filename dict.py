@@ -1,28 +1,29 @@
 import psycopg2
+from psycopg2 import *
 conn = psycopg2.connect(
    host="localhost",
+   port=5432,
    database="dict",
-   port="5432",
-   user="postgress",
+   user="postgres",
    password="Vera1234?"
 )
 
-def read_dict(conn):
-    cur = conn.cursor()
+def read_dict(C):
+    cur = C.cursor()
     cur.execute("SELECT id, word, translation FROM dictionary;")
     rows = cur.fetchall()
     cur.close()
     return rows
-def add_word(conn, word, translation):
-    cur = conn.cursor()
+def add_word(C, word, translation):
+    cur = C.cursor()
     cur.execute(f"INSERT INTO dictionary (word, translation) VALUES ('{word}', '{translation}');")
     cur.close()
-def delete_word(conn, ID):
-    cur = conn.cursor()
+def delete_word(C, ID):
+    cur = C.cursor()
     cur.execute(f"DELETE FROM dictionary WHERE id = '{ID}';")
     cur.close()
-def save_dict(conn):
-    cur = conn.cursor()
+def save_dict(C):
+    cur = C.cursor()
     cur.execute("COMMIT;")
     cur.close()
 
