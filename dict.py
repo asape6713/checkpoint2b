@@ -11,6 +11,7 @@ conn = psycopg2.connect(
 #llll
 #xyz
 # tänk på att dubbelkolla om sql table verkligen finns i databasen
+#nisse 3
 def read_dict(C):
     cur = C.cursor()
     cur.execute("SELECT id, word, translation FROM dictionary;")
